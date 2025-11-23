@@ -1,3 +1,15 @@
+# Notes
+
+apt install docker.io
+
+sudo dockerd --iptables=false &
+
+docker volume create portainer_data
+
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:lts
+
+docker run samuk/basekit-ros:latest
+
 # BaseKit ROS
 
 BaseKit ROS is a comprehensive ROS2 package that handles the communication and configuration of various field friend components:
